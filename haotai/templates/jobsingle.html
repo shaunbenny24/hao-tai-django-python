@@ -1,0 +1,63 @@
+
+        {%extends 'base.html'%}
+        {%load static%}
+        {%block style%}
+    <link rel="stylesheet" href="{% static  'stylelast.css'%}">
+    {%endblock%}
+        
+    {%block content%}
+    <div class="second"><h2>Crypto Promoters</h2></div>
+
+    <section class="crypto">
+        <div class="currency">
+            <img src="{{jobdes.image.url}}" alt="">
+        </div>
+        <div class="note">
+            <div>
+                <b>{{jobdes.title}}</b><br><br>
+                <p>{{jobdes.description}}</p>
+            </div>
+            <div class="vacancy">{{jobdes.no_of_vacancy }}Job Vacancy</div>
+        </div>
+    </section>
+    <section class="requirements">
+        <h3>Requirements</h3>
+        <div class="conditions">
+            <div class="exp">
+                <h4>Experience</h4><br>
+                <p>{{jobdes.experience }}</p>
+            </div>
+            <div class="exp">
+                <ul><h4>Documents</h4></ul><br>
+                <li>{{jobdes.documents }}</li>
+                <!-- <li>Covid vaccine certificate</li>
+                <li>RTPCR test certificate</li> -->
+            </div>
+            <div class="exp">
+                <ul><h4>Skills</h4></ul><br>
+                <li>{{jobdes.skill }}</li>
+                <!-- <li>Typing speed of minimum 30words/minute</li> -->
+            </div>
+            <div class="exp">
+                <h4>Language</h4><br>
+                <p>{{jobdes.language }}.</p><br>
+                <!-- OR <br><br>
+                <p>Chinese Fluency, Fluent enough to understand and respond
+                    South Asian/Chinese clients at work.
+                    (Both language knowledge is a high advantage)</p> -->
+            </div>
+            <div class="exp">
+                <h4>Salary</h4><br>
+                <p>{{jobdes.salary }}</p>
+            </div>
+            <div class="exp">
+                <h4>Age</h4><br>
+                <p>{{jobdes.age }}</p>
+            </div>
+        </div>
+        
+        <div class="cv"><a href="">Sent CV</a></div>
+        
+    </section>
+   
+    {%endblock%}

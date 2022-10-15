@@ -1,0 +1,63 @@
+
+        {%extends 'base.html'%}
+        {%load static%}
+        {%block style%}
+       
+        <link rel="stylesheet" href="{% static  'style.css'%}">
+        {%endblock%}
+        
+        {%block content%}
+        <section class="second">
+            <div class="paragraph">
+                <div class="third">
+                    <h1>Hao Tai</h1>
+                <p>Hao Tai Int Co a partner of Asia's top financial group, is currently one of the few overseas financial operating companies.
+                </p>
+                
+                <div class="read">
+                    <a href=""><p> Read more </p></a>
+                </div>
+                </div>
+                <div class="blocks">
+                    <div class="number"><p><b>15000+</b><br> Num. of Employers</p></div>
+                    <div class="number"><p><b>Mae sot</b><br> location</p></div>
+                    <div class="number"><p><b>430+</b><br> Num. of Buildings</p></div>
+                    <div class="number"><p><b>72 Acres</b><br> Area</p></div>
+                </div>
+            </div>
+            <div class="blank">
+                <img src="" alt="">
+            </div>
+        </section>
+        <section >
+    
+    
+    
+            <h2>Job Categories</h2>
+    
+    
+          
+            <div class="job">
+                {% for Categories in category %}
+                <div class="vacancy"><a href="{%url 'job' Categories.pk %}">
+                    <div>
+                        <img src="{{Categories.image.url}}" alt="">
+                    </div>
+                    <div>
+                        <h3>{{Categories.title}}
+                        </h3>
+                        <p>{{Categories.description}}</p>
+                    <div class="slots">
+                    {{Categories.no_of_vacancy }} Job Vacancy
+                    </div>
+                    </div></a>
+                </div>
+                {% endfor %}
+               
+                </div> -->
+            
+            </div>
+        </section>
+    
+       {%endblock%}
+      

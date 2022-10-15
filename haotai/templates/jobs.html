@@ -1,0 +1,33 @@
+
+        {%extends 'base.html'%}
+        {%load static%}
+        {%block style%}
+
+    <link rel="stylesheet" href="{% static  'stylejob.css'%}">
+    {%endblock%}
+        
+    {%block content%}
+    <section class="work">
+        <h2>Jobs</h2>
+        <div class="job">
+            {% for Categories in jobdescrips %}
+            <div class="vacancy"><a href="{%url 'jobsingle' Categories.pk %}">
+                <div>
+                    <img src="{{Categories.image.url}}" alt="">
+                </div>
+                <div>
+                    <h3>{{Categories.title}}
+                    </h3>
+                    <p>{{Categories.description}}</p>
+                <div class="slots">
+                {{Categories.no_of_vacancy }} Job Vacancy
+                </div>
+                </div></a>
+            </div>
+            {% endfor %}
+         
+            </div>
+        </div>
+    </section>
+  
+    {%endblock%}
